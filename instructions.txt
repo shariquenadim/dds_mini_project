@@ -1,0 +1,6 @@
+Open index.html to view project report.
+Project report can also be viewed at https://dds-g4.netlify.com
+
+Browser Recommendations: Chrome, Edge, Firefox
+
+Note: Prefer a bright desktop screen to view the report, contents may not render properly on mobile screen.

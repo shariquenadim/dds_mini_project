@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/stylesheets/style.css">
+    <link rel="stylesheet" href="../assets/stylesheets/table.css">
+    <link rel="stylesheet" href="../assets/stylesheets/header-1.css">
+    <title>Simulator</title>
+</head>
+
+<body>
+    <div class="header-wrapper">
+        <div class="container">
+            <div class="header">
+                <!-- <img src="../assets/images/header.png" alt="NITK Surathkal"> -->
+            </div>
+        </div>
+    </div>
+    <div class="nav-wrapper">
+        <header class="site-header container">
+            <div class="wrapper site-header__wrapper">
+                <a href="../report/index.html" class="brand"></a>
+                <nav class="nav">
+                    <svg class="nav__toggle" fill="#3e6389" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="48px" height="48px">
+                        <path
+                            d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z" />
+                    </svg>
+
+                    <ul class="nav__wrapper">
+                        <li class="nav__item"><a href="../index.html">Aim</a></li>
+                        <li class="nav__item"><a href="../report/index.html">Theory</a></li>
+                        <li class="nav__item nav__item--end"><a href="../procedure/index.html">Procedure</a></li>
+                        <li class="nav__item"><a href="../simulator/index.html">Simulation</a></li>
+                        <li class="nav__item"><a href="../Reference/index.html">References</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <div class="simulator-main container">
+        <h2 style="text-align: center; margin-top: 1rem;">SA0 & SA1 Fault in 3-input odd function Simulator</h2>
+        <div class="circuit-main container">
+            <img src="../assets/images/circuit.png" alt="">
+            <!-- switch A -->
+            <img id="switchA" class="switch" data-value="0" src="../assets/images/switchoff.png" onclick="turnSwitch(this) " alt="Switch A" />
+            <!-- switch B -->
+            <img id="switchB" class="switch" data-value="0" src="../assets/images/switchoff.png" onclick="turnSwitch(this)" alt="Switch B" />
+            <!-- switch C -->
+            <img id="switchC" class="switch" data-value="0" src="../assets/images/switchoff.png" onclick="turnSwitch(this)" alt="Switch C" />
+            <!-- Bulb -->
+            <img class="bulb" src="../assets/images/offg.png" alt="Output Bulb">
+            <!-- Stuck At Selector -->
+            <div class="stuck-at-selector">
+                <h4>Stuck At</h4><span></span>
+                <button class="stuck-at-button" data-value="1" onclick="whereStuckAt(this)">
+                    A SA0
+                </button>
+                <button class="stuck-at-button" data-value="2" onclick="whereStuckAt(this)">
+                    A SA1
+                </button>
+                <button class="stuck-at-button" data-value="3" onclick="whereStuckAt(this)">
+                    B SA0
+                </button>
+                <button class="stuck-at-button" data-value="4" onclick="whereStuckAt(this)">
+                    B SA1
+                </button>
+                <button class="stuck-at-button" data-value="5" onclick="whereStuckAt(this)">
+                    C SA0
+                </button>
+                <button class="stuck-at-button" data-value="6" onclick="whereStuckAt(this)">
+                    C SA1
+                </button>
+                <button class="stuck-at-button" data-value="7" onclick="whereStuckAt(this)">
+                    D SA0
+                </button>
+                <button class="stuck-at-button" data-value="8" onclick="whereStuckAt(this)">
+                    D SA1
+                </button>
+                <button class="stuck-at-button" data-value="9" onclick="whereStuckAt(this)">
+                    E SA0
+                </button>
+                <button class="stuck-at-button" data-value="10" onclick="whereStuckAt(this)">
+                    E SA1
+                </button>
+            </div>
+            <!-- stuck at labels -->
+            <span class="st-lables" id="1" style="left: 190px;
+            top: 170px;">SA0</span>
+            <span class="st-lables" id="2" style="left: 190px;
+            top: 170px;">SA1</span>
+            <span class="st-lables" id="3" style="left: 190px;
+            top: 252px;">SA0</span>
+            <span class="st-lables" id="4" style="left: 190px;
+            top: 252px;">SA1</span>
+            <span class="st-lables" id="5" style="left: 190px;
+            top: 460px;">SA0</span>
+            <span class="st-lables" id="6" style="left: 190px;
+            top: 460px;">SA1</span>
+            <span class="st-lables" id="7" style="left: 540px;
+            top: 210px;">SA0</span>
+            <span class="st-lables" id="8" style="left: 540px;
+            top: 210px;">SA1</span>
+            <span class="st-lables" id="9" style="right: 90px;
+            top: 254px;">SA0</span>
+            <span class="st-lables" id="10" style="right: 90px;
+            top: 254px;">SA1</span>
+        </div>
+        <div class="simulator-table container" style="width: 900px; margin-bottom: 3rem; display: flex; flex-direction: column; justify-content: center; ">
+            <button onclick="addResult()" class="add-button" style="padding: 0.5rem 1rem; background-color: #27d447; margin: auto;">
+                Add
+            </button>
+            <button onclick="window.location.reload();" class="add-button" style="padding: 0.5rem 1rem; background-color: #27d447; margin: auto;">
+                Reset
+            </button>
+
+            <table class="tg">
+                <thead>
+                    <tr>
+                        <th class="tg-b7zx" colspan="3">Input</th>
+                        <th class="tg-ogub" rowspan="2">Fault</th>
+                        <th class="tg-ogub" rowspan="2">Output <br>(without Fault)</th>
+                        <th class="tg-ogub" rowspan="2">Output <br>(with Fault)</th>
+                    </tr>
+                    <tr>
+                        <th class="tg-b7zx">X</th>
+                        <th class="tg-b7zx">Y</th>
+                        <th class="tg-b7zx">Z</th>
+                    </tr>
+                </thead>
+                <tbody id="insert-here">
+                    <tr style="background-color: #96ff96;">
+                        <td class="tg-nrix">0</td>
+                        <td class="tg-nrix">0</td>
+                        <td class="tg-nrix">0</td>
+                        <td class="tg-nrix">N/A</td>
+                        <td class="tg-nrix">0</td>
+                        <td class="tg-nrix">0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="window.print()" class="add-button" style="padding: 0.5rem 1rem; background-color: #27d447; margin: auto;">
+                Print
+            </button>
+
+        </div>
+    </div>
+</body>
+<script src="../assets/scripts/simulation.js"></script>
+<script src="../assets/scripts/navbar.js"></script>
+
+
+
+</html>

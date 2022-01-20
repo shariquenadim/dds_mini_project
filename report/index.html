@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/stylesheets/style.css">
+    <link rel="stylesheet" href="../assets/stylesheets/style.css">
+    <link rel="stylesheet" href="../assets/stylesheets/header-1.css">
+    <link rel="stylesheet" href="..//assets/stylesheets/table.css">
+    <title>CS203 Mini Project Report</title>
+    <style>
+        h1,
+        h2,
+        h3 {
+            margin: 1rem 0;
+        }
+        
+        h2 {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-wrapper" id="aim">
+        <div class="container">
+            <div class="header">
+                <!-- <img src="../assets/images/header.png" alt="NITK Surathkal"> -->
+            </div>
+        </div>
+    </div>
+    <div class="nav-wrapper">
+        <header class="site-header container">
+            <div class="wrapper site-header__wrapper">
+                <a href="../index.html" style="font-weight: bold;" class="brand"></a>
+                <nav class="nav">
+                    <svg class="nav__toggle" fill="#3e6389" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="48px" height="48px">
+                        <path
+                            d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z" />
+                    </svg>
+
+                    <ul class="nav__wrapper">
+                        <li class="nav__item"><a href="../index.html">Aim</a></li>
+                        <li class="nav__item"><a href="#theory">Theory</a></li>
+                        <li class="nav__item nav__item--end"><a href="../procedure/index.html">Procedure</a></li>
+                        <li class="nav__item"><a href="../simulator/index.html">Simulation</a></li>
+                        <li class="nav__item"><a href="../Reference/index.html">References</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <section class="report-main container" style="margin-bottom: 3rem;">
+
+        <!-- <div class="report-aim">
+            <h2>Aim:</h2>
+            <p>Detection of both SA0 and SA1 faults on the logic circuit (shown below) that represents a 3–input ODD function.</p>
+            <figure style="text-align: center; margin: 1rem;">
+
+                <img id="theory" src="../assets/images/image5.png" alt="Odd input ">
+            </figure>
+        </div> -->
+        <div class="report-aim">
+            <h2>Theory:</h2>
+            <h3>Introduction</h3>
+            <h3>Exclusive-OR (XOR):</h3>
+            <p>XOR gate is formed by a combination of AND-OR-INVERT (AOI) logic. XOR gate (sometimes EOR, or EXOR and pronounced as Exclusive OR) is a digital logic gate that gives a true (1 or HIGH) output when the number of true inputs is odd. An XOR gate
+                implements an exclusive or from mathematical logic; that is, true output results if one, and only one, of the inputs to the gate is true. If both inputs are false (0/LOW) or both are true false output results. XOR represents the inequality
+                function, i.e., the output is true if the inputs are not alike otherwise the output is false. A way to remember XOR is "must have one or the other but not both".</p><br>
+            <p>The three-variable XOR is equal to 1 if only one variable is equal to 1 or if all three variables are equal to 1. With three or more variables an odd number of variables must be equal to 1.</p><br>
+            <figure>
+                <img src="../assets/images/image4.png" alt="schematic symbols for XOR gates">
+                <figcaption>schematic symbols for XOR gates</figcaption>
+            </figure>
+            <figure style="text-align: center; margin: 1rem;">
+                <img src="../assets/images/image1.jpg" style="width:80%; max-width: 600px; " alt="">
+            </figure>
+            <h3>Faults in logical circuits:</h3>
+            <p>Fault is a physical defect within a circuit or a system that may or may not cause a system failure. It is a logic-level abstraction of a physical defect and is used to describe the change in the logic function of a device caused by the defect.</p><br>
+            <p>Logical errors are used to represent physical errors. They simplify the error analysis process and reduce the number of errors. The most common model used for logical faults is the "single stuck-at fault". It assumes that a fault in a logic
+                gate results in one of its inputs or the output being fixed to either a logic 0 (stuck at-0) or a logic 1 (stuck-at-1). Stuck-at-0 and stuck-at-1 faults are often abbreviated to s-a-0 and s-a-1 respectively, and the abbreviations will
+                be adopted here.</p><br>
+            <h3> Stuck-at fault (SAF):</h3>
+            <p>A stuck-at fault is a particular fault model used by fault simulators and tools to mimic a manufacturing defect within an integrated circuit. Individual signals and pins are assumed to be stuck at Logical '1', '0', and 'X'. For example, an
+                input is tied to a logical 1 state during test generation to assure that a manufacturing defect with that type of behavior can be found with a specific test pattern. Likewise, the input could be tied to a logical 0 to model the behavior
+                of a defective circuit that cannot switch its output pin.</p><br>
+            <figure>
+                <img src="../assets/images/circuit1.png" alt=" SAF">
+                <figcaption>A,B,C,D,E are diffrent points in the circuit. They can be stuck at 0 or 1 due to the fault.
+                </figcaption>
+            </figure>
+            <p style="text-align: center;font-size: 2rem; margin: 2rem;">
+                Output = X⊕Y⊕Z
+            </p>
+            <h3>Truth Tables:</h3>
+            <figure style="margin-bottom: 2rem;">
+                <img src="../assets/images/tt0.jpg" alt="Truth Table">
+                <figcaption>Truth Table</figcaption>
+            </figure>
+            <div class="tt-select">
+                <h4 style="color: white;">Stuck At</h4><span></span>
+                <button class="stuck-at-button" data-value="1" onclick="fillTable(0)">
+                    No Fault
+                </button>
+                <button class="stuck-at-button" data-value="1" onclick="fillTable(1)">
+                    A SA0
+                </button>
+                <button class="stuck-at-button" data-value="2" onclick="fillTable(2)">
+                    A SA1
+                </button>
+                <button class="stuck-at-button" data-value="3" onclick="fillTable(3)">
+                    B SA0
+                </button>
+                <button class="stuck-at-button" data-value="4" onclick="fillTable(4)">
+                    B SA1
+                </button>
+                <button class="stuck-at-button" data-value="5" onclick="fillTable(5)">
+                    C SA0
+                </button>
+                <button class="stuck-at-button" data-value="6" onclick="fillTable(6)">
+                    C SA1
+                </button>
+                <button class="stuck-at-button" data-value="7" onclick="fillTable(7)">
+                    D SA0
+                </button>
+                <button class="stuck-at-button" data-value="8" onclick="fillTable(8)">
+                    D SA1
+                </button>
+                <button class="stuck-at-button" data-value="9" onclick="fillTable(9)">
+                    E SA0
+                </button>
+                <button class="stuck-at-button" data-value="10" onclick="fillTable(10)">
+                    E SA1
+                </button>
+            </div>
+            <div id="table-here" class="simulator-table container"></div>
+
+    </section>
+</body>
+<script src="../assets/scripts/navbar.js"></script>
+<script src="../assets/scripts/simulation.js"></script>
+<script>
+    window.onload = function() {
+        fillTable(0);
+    }
+</script>
+
+</html>
