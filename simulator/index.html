@@ -110,13 +110,19 @@
             <span class="st-lables" id="10" style="right: 90px;
             top: 254px;">SA1</span>
         </div>
-        <div class="simulator-table container" style="width: 900px; margin-bottom: 3rem; display: flex; flex-direction: column; justify-content: center; ">
+        <div class="but" style="margin-top: 3rem; display: flex; flex-direction: row; justify-content: center;">
             <button onclick="addResult()" class="add-button" style="padding: 0.5rem 1rem; background-color: #27d447; margin: auto;">
-                Add
-            </button>
+            Add
+        </button>
             <button onclick="window.location.reload();" class="add-button" style="padding: 0.5rem 1rem; background-color: #27d447; margin: auto;">
-                Reset
-            </button>
+            Reset
+        </button>
+            <button onclick="window.print()" class="add-button" style="padding: 0.5rem 1rem; background-color: #27d447; margin: auto;">
+            Print
+        </button>
+        </div>
+        <div class="simulator-table container" style="width: 900px; margin-bottom: 3rem; display: flex; flex-direction: column; justify-content: center; ">
+
 
             <table class="tg">
                 <thead>
@@ -143,9 +149,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button onclick="window.print()" class="add-button" style="padding: 0.5rem 1rem; background-color: #27d447; margin: auto;">
-                Print
-            </button>
+
 
         </div>
     </div>
