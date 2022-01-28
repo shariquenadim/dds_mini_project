@@ -1,57 +1,55 @@
 // creating an array and passing the number, questions, options, and answers
 let questions = [{
         numb: 1,
-        question: "Question 01?",
-        answer: "Right answer",
+        question: "Which is/are the properties of a single stuck-at-fault ?",
+        answer: "All of these",
         options: [
-            "wrong answer",
-            "wrong answer",
-            "Right answer",
-            "wrong answer"
+            "Only one line is faulty",
+            "The faulty line is parmanenetly is set to 0 or 1",
+            "The fault can be at an input or output of a gate",
+            "All of these"
         ]
     },
     {
         numb: 2,
-        question: "Question 02?",
-        answer: "Right Answer",
+        question: "When Output will be always 1 in XOR gate ?",
+        answer: "When both the inputs are same",
         options: [
-            "wrong answer",
-            "wrong answer",
-            "Right Answer",
-            "wrong answer"
+            "When both the inputs are same",
+            "When both the inputs are different",
+            "All the above answers",
+            "None of these"
         ]
     },
     {
         numb: 3,
-        question: "Question 03?",
-        answer: "ri8 ans",
+        question: "We can put Stuck-at-fault anywhere in circuit (before and after gate)?",
+        answer: "True",
         options: [
-            "wrong answer",
-            "ri8 ans",
-            "wrong answer",
-            "wrong answer"
+            "True",
+            "False"
         ]
     },
     {
         numb: 4,
-        question: "Question 04?",
-        answer: "write answer",
+        question: "Where to put stuck-at-1, the answer will always be 1?",
+        answer: "On point 'E'",
         options: [
-            "write answer",
-            "wrong answer",
-            "wrong answer",
-            "wrong answer"
+            "On point 'A'",
+            "On point 'D'",
+            "On point 'E'",
+            "On point 'C'"
         ]
     },
     {
         numb: 5,
-        question: "Question 05?",
-        answer: "ri8 answer",
+        question: "How many inputs required to define stuck-at concept ?",
+        answer: "Minimum 1, Maximum n",
         options: [
-            "wrong answer",
-            "wrong answer",
-            "wrong answer",
-            "ri8 answer"
+            "Minimum 1, Maximum 3",
+            "Minimum 1, Maximum 5",
+            "Minimum 2, Maximum n",
+            "Minimum 1, Maximum n"
         ]
     },
     // you can uncomment the below codes and make duplicate as more as you want to add question

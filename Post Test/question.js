@@ -1,57 +1,55 @@
 // creating an array and passing the number, questions, options, and answers
 let questions = [{
         numb: 1,
-        question: "Question 01?",
-        answer: "Right answer",
+        question: "Stuck-at-0 or Stuck-at-1 is a type of registance in circuit ?",
+        answer: "True",
         options: [
-            "wrong answer",
-            "wrong answer",
-            "Right answer",
-            "wrong answer"
+            "True",
+            "False"
         ]
     },
     {
         numb: 2,
-        question: "Question 02?",
-        answer: "Right Answer",
+        question: "Must have one or the other but not both, this statement is correct for which gate ?",
+        answer: "XOR",
         options: [
-            "wrong answer",
-            "wrong answer",
-            "Right Answer",
-            "wrong answer"
+            "OR",
+            "XOR",
+            "AND",
+            "XNOR"
         ]
     },
     {
         numb: 3,
-        question: "Question 03?",
-        answer: "ri8 ans",
+        question: "With three or more variables XOR gate is equal to 1.",
+        answer: "If an even number of variables must be equal to 1.",
         options: [
-            "wrong answer",
-            "ri8 ans",
-            "wrong answer",
-            "wrong answer"
+            "If an even number of variables must be equal to 1.",
+            "If an odd number of variables must be equal to 1.",
+            "Both the above options.",
+            "We can not determine with the given data."
         ]
     },
     {
         numb: 4,
-        question: "Question 04?",
-        answer: "write answer",
+        question: "The expression of an XOR gate is ",
+        answer: "A'B + AB'",
         options: [
-            "write answer",
-            "wrong answer",
-            "wrong answer",
-            "wrong answer"
+            "A'B + AB'",
+            "3 bits",
+            "A + A.B",
+            "A' + B'"
         ]
     },
     {
         numb: 5,
-        question: "Question 05?",
-        answer: "ri8 answer",
+        question: "In a wire, how many possibilities are there ?",
+        answer: "All of these",
         options: [
-            "wrong answer",
-            "wrong answer",
-            "wrong answer",
-            "ri8 answer"
+            "Stuck-at-0-fault",
+            "Stuck-at-1-fault",
+            "No fault",
+            "All of these"
         ]
     },
     // you can uncomment the below codes and make duplicate as more as you want to add question
