@@ -10,7 +10,7 @@ let questions = [{
     },
     {
         numb: 2,
-        question: "Must have one or the other but not both, this statement is correct for which gate ?",
+        question: "&#34;Must have one or the other but not both&#34;, this statement is correct for which gate ?",
         answer: "XOR",
         options: [
             "OR",
