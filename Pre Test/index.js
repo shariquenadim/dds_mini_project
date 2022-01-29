@@ -5,6 +5,8 @@ const info_box = document.querySelector(".info_box");
 const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
 const option_list = document.querySelector(".option_list");
+const info_list = document.querySelector(".info_box .info-list");
+
 
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
@@ -12,6 +14,7 @@ let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
+const restart_btn = document.querySelector(".restart");
 
 // if exitQuiz button clicked
 // exit_btn.onclick = ()=>{
@@ -43,12 +46,21 @@ const prevScore = localStorage.getItem("userScore");
 
 if(prevScore) {
    info_box.classList.add("activeInfo");
+   info_list.insertAdjacentHTML('beforeend',`<div class="info">2. Your previous score was ${prevScore}</div>`);
 }
 else {
    quiz_box.classList.add("activeQuiz"); //show quiz box
    showQuetions(0); //calling showQestions function
    queCounter(1); //passing 1 parameter to queCounter
 } 
+
+restart_btn.onclick = () => {
+   info_box.classList.remove("activeInfo");
+   quiz_box.classList.add("activeQuiz");
+   showQuetions(0);
+   queCounter(1);
+   userScore = 0;
+}
 
 // if Next Que button clicked
 next_btn.onclick = ()=>{
@@ -72,11 +84,19 @@ function showQuetions(index){
     const que_text = document.querySelector(".que_text");
 
     //creating a new span and div tag for question and option and passing the value using array index
+    //  let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
+    //  + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
+    //  + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
+    //  + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
+    
+    let temp = [];
+    temp = questions[index].options.map((val) => {
+       return  `<div class="option"><span>${val}</span></div>`;
+      })
+
     let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
+    let option_tag = temp.join('');
+
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
