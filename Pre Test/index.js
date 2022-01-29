@@ -15,6 +15,7 @@ let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 const restart_btn = document.querySelector(".restart");
+const quit_btn = document.querySelector(".quit");
 
 // if exitQuiz button clicked
 // exit_btn.onclick = ()=>{
@@ -56,10 +57,22 @@ else {
 
 restart_btn.onclick = () => {
    info_box.classList.remove("activeInfo");
-   quiz_box.classList.add("activeQuiz");
+   quiz_box.classList.add("activeQuiz"); 
+   userScore = 0;
+   que_count = 0;
+   que_numb = 1;
    showQuetions(0);
    queCounter(1);
+}
+
+quit_btn.onclick = () => {
+   result_box.classList.remove("activeResult");
+   quiz_box.classList.add("activeQuiz");
    userScore = 0;
+   que_count = 0;
+   que_numb = 1;
+   showQuetions(0);
+   queCounter(1);
 }
 
 // if Next Que button clicked
