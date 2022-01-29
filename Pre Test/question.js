@@ -35,8 +35,8 @@ let questions = [{
         question: "From the following options which is the real world example of XOR gate?",
         answer: "Game Show Buzzer",
         options: [
-            "Switch Board",
             "Radio",
+            "Switch Board",
             "Game Show Buzzer",
             "Transformer"
         ]
