@@ -32,13 +32,13 @@ let questions = [{
     },
     {
         numb: 4,
-        question: "Where to put stuck-at-1, the answer will always be 1?",
-        answer: "On point 'E'",
+        question: "From the following options which is the real world example of XOR gate?",
+        answer: "Game Show Buzzer",
         options: [
-            "On point 'A'",
-            "On point 'D'",
-            "On point 'E'",
-            "On point 'C'"
+            "Switch Board",
+            "Radio",
+            "Game Show Buzzer",
+            "Transformer"
         ]
     },
     {
