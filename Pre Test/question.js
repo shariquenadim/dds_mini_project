@@ -5,14 +5,14 @@ let questions = [{
         answer: "All of these",
         options: [
             "Only one line is faulty",
-            "The faulty line is parmanenetly is set to 0 or 1",
-            "The fault can be at an input or output of a gate",
+            "The faulty line is parmanenetly set to 0 or 1",
+            "The fault can be placed at an input or output of a gate",
             "All of these"
         ]
     },
     {
         numb: 2,
-        question: "When Output will be always 1 in XOR gate ?",
+        question: "When will the output always be 1 in 2-input XOR gate ?",
         answer: "When both the inputs are same",
         options: [
             "When both the inputs are same",
@@ -43,7 +43,7 @@ let questions = [{
     },
     {
         numb: 5,
-        question: "How many inputs required to define stuck-at concept ?",
+        question: "How many inputs is/are required to define stuck-at concept ?",
         answer: "Minimum 1, Maximum n",
         options: [
             "Minimum 1, Maximum 3",
