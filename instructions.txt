@@ -1,5 +1,5 @@
 Open index.html to view project report.
-Project report can also be viewed at https://dds-g4.netlify.com
+
 
 Browser Recommendations: Chrome, Edge, Firefox
 
